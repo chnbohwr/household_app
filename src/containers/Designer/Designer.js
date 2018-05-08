@@ -1,25 +1,22 @@
 import React from 'react';
 import { Text, Image } from 'react-native';
-import { Container, Avatar } from './style';
+import { Container, Avatar, TopSpace, FollowBtn } from './style';
 import avatar from '../../resources/avatar.png';
-
+import RadiusButton from '../../components/RadiusButton';
 export default class Designer extends React.Component {
   render() {
     return (
       <Container>
-        <Text>asdf</Text>
-        <Avatar
-          source={avatar}
-          height={100}
-          resizeMode="cover"
-          borderRadius={10}
-        />
-        <Image
-          source={avatar}
-          height={100}
-          resizeMode="cover"
-          borderRadius={10}
-        />
+        <TopSpace>
+          <Avatar
+            source={avatar}
+            resizeMode="cover"
+            borderRadius={10}
+          />
+          <RadiusButton>
+            <Text>+Follow</Text>
+          </RadiusButton>
+        </TopSpace>
       </Container>
     );
   }
