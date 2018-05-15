@@ -6,9 +6,18 @@
 
 import React, { Component } from 'react';
 import { View } from 'react-native';
+import firebase from 'react-native-firebase';
 import Designer from './containers/Designer';
 
-export default class App extends Component{
+export default class App extends Component {
+  async componentDidMount() {
+    const fcmToken = await firebase.messaging().getToken();
+    if (fcmToken) {
+      console.log(`fcmToken:${fcmToken}`)
+    } else {
+      // user doesn't have a device token yet
+    }
+  }
   render() {
     return (
       <Designer />
