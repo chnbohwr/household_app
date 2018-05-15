@@ -4191,10 +4191,6 @@ react-is@^16.3.1:
   version "16.3.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.3.2.tgz#f4d3d0e2f5fbb6ac46450641eb2e25bf05d36b22"
 
-react-native-fcm@^15.0.0:
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-fcm/-/react-native-fcm-15.0.0.tgz#4656a79df14d8d3c5a7b2759e4396081e8c04643"
-
 react-native-shadow@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/react-native-shadow/-/react-native-shadow-1.2.2.tgz#08991cd14b71e32f2fc6363911c139d231949a66"
