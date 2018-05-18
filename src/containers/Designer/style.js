@@ -4,23 +4,20 @@ import React from 'react';
 import { View } from 'react-native';
 
 const shadowOptImg = {
-  width: 100,
-  height: 100,
   color: "#000",
   border: 8,
-  radius: 10,
   opacity: 0.2,
   x: 0,
   y: 2,
 };
 
-export const AvatarImg = ({ source, resizeMode, borderRadius }) => (
-  <BoxShadow setting={shadowOptImg}>
-    <Avatar source={source} resizeMode={resizeMode} borderRadius={borderRadius} />
+export const ShadowImage = ({ source, resizeMode, borderRadius, width, height }) => (
+  <BoxShadow setting={{...shadowOptImg, width, height, radius: borderRadius }}>
+    <Avatar width={width} height={height} source={source} resizeMode={resizeMode} borderRadius={borderRadius} />
   </BoxShadow>
 );
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
   background-color: #41424B;
   width: 100%;
   display: flex;
@@ -37,8 +34,8 @@ export const TopSpace = styled.View`
 `;
 
 const Avatar = styled.Image`
-  width: 100px;
-  height: 100px;
+  width: ${props => props.width};
+  height: ${props => props.height};
 `;
 
 export const MiddleSpace = styled.View`
@@ -86,3 +83,14 @@ export const Fdcomp = ({ type, number, style }) => (
     </FDSpace>
   </View>
 );
+
+export const FavoriteText = styled.Text`
+  font-size: 16px;
+  color: #fff;
+  margin: 20px 0;
+`;
+
+export const DecoImage = styled.Image`
+  height: 200px;
+  width: 200px;
+`;
