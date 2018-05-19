@@ -1,10 +1,11 @@
 import React from 'react';
-import { Text, Image } from 'react-native';
+import { Text, Image, View } from 'react-native';
 import {
   Container, ShadowImage, TopSpace,
   FollowBtn, MiddleSpace, DesignerName,
   DesignerDesc, FollowSpace, Fdcomp,
-  FavoriteText,
+  FavoriteText, ImageContainer, Space,
+  Space2,
 } from './style';
 import avatar from '../../resources/avatar.png';
 import home1 from '../../resources/home1.png';
@@ -40,34 +41,41 @@ export default class Designer extends React.Component {
           <Fdcomp type={1} number={245} />
         </FollowSpace>
         <FavoriteText>Favorite</FavoriteText>
-        <ShadowImage
-          source={home1}
-          resizeMode="cover"
-          borderRadius={4}
-          width={200}
-          height={200}
-        />
-        <ShadowImage
-          source={home2}
-          resizeMode="cover"
-          borderRadius={4}
-          width={200}
-          height={200}
-        />
-        <ShadowImage
-          source={home3}
-          resizeMode="cover"
-          borderRadius={4}
-          width={200}
-          height={200}
-        />
-        <ShadowImage
-          source={home4}
-          resizeMode="cover"
-          borderRadius={4}
-          width={200}
-          height={200}
-        />
+        <ImageContainer horizontal={true}>
+          <ShadowImage
+            source={home1}
+            resizeMode="cover"
+            borderRadius={4}
+            width={200}
+            height={200}
+          />
+          <Space2 />
+          <ShadowImage
+            source={home2}
+            resizeMode="cover"
+            borderRadius={4}
+            width={200}
+            height={200}
+          />
+        </ImageContainer>
+        <ImageContainer horizontal={true}>
+          <ShadowImage
+            source={home3}
+            resizeMode="cover"
+            borderRadius={4}
+            width={200}
+            height={200}
+          />
+          <Space2 />
+          <ShadowImage
+            source={home4}
+            resizeMode="cover"
+            borderRadius={4}
+            width={200}
+            height={200}
+          />
+        </ImageContainer>
+        <Space />
       </Container>
     );
   }

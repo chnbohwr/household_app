@@ -5,7 +5,6 @@
  */
 
 import React, { Component } from 'react';
-import { View } from 'react-native';
 import firebase from 'react-native-firebase';
 import Designer from './containers/Designer';
 

@@ -11,9 +11,9 @@ const shadowOptImg = {
   y: 2,
 };
 
-export const ShadowImage = ({ source, resizeMode, borderRadius, width, height }) => (
-  <BoxShadow setting={{...shadowOptImg, width, height, radius: borderRadius }}>
-    <Avatar width={width} height={height} source={source} resizeMode={resizeMode} borderRadius={borderRadius} />
+export const ShadowImage = ({ source, resizeMode, borderRadius, width, height, mr }) => (
+  <BoxShadow setting={{ ...shadowOptImg, width, height, radius: borderRadius }}>
+    <Avatar mr={mr} width={width} height={height} source={source} resizeMode={resizeMode} borderRadius={borderRadius} />
   </BoxShadow>
 );
 
@@ -23,6 +23,22 @@ export const Container = styled.ScrollView`
   display: flex;
   flex: 1;
   padding: 25px;
+`;
+
+export const ImageContainer = styled.ScrollView`
+  margin-bottom: 20px;
+`;
+
+export const Space = styled.View`
+  width: 100%;
+  height: 25px;
+  background-color: transparent;
+`;
+
+export const Space2 = styled.View`
+  height: 200px;
+  width: 20px;
+  background-color: transparent;
 `;
 
 export const TopSpace = styled.View`
