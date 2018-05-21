@@ -7,6 +7,7 @@
 import React, { Component } from 'react';
 import firebase from 'react-native-firebase';
 import Designer from './containers/Designer';
+import House from './containers/House';
 
 export default class App extends Component {
   async componentDidMount() {
@@ -19,7 +20,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <Designer />
+      <House />
     );
   }
 }
