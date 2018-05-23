@@ -14,10 +14,10 @@ import home3 from '../../resources/home3.png';
 import home4 from '../../resources/home4.png';
 import RadiusButton from '../../components/RadiusButton';
 
-
-
 export default class Designer extends React.Component {
+  static navigationOptions = { title: 'Welcome', header: null }
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <Container>
         <TopSpace>
@@ -43,6 +43,7 @@ export default class Designer extends React.Component {
         <FavoriteText>Favorite</FavoriteText>
         <ImageContainer horizontal={true}>
           <ShadowImage
+            onPress={()=>navigate('House')}
             source={home1}
             resizeMode="cover"
             borderRadius={4}

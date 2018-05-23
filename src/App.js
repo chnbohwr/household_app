@@ -6,8 +6,19 @@
 
 import React, { Component } from 'react';
 import firebase from 'react-native-firebase';
+import { StackNavigator } from 'react-navigation';
 import Designer from './containers/Designer';
 import House from './containers/House';
+
+const APP = StackNavigator({
+  Designer: { screen: Designer },
+  House: { screen: House },
+},{
+  initialRouteName: 'Designer',
+  navigationOptions: { header: null },
+});
+
+// export default APP;
 
 export default class App extends Component {
   async componentDidMount() {
@@ -20,7 +31,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <Designer />
+      <APP />
     );
   }
 }

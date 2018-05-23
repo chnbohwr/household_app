@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { BoxShadow } from 'react-native-shadow';
 import React from 'react';
-import { View } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 
 const shadowOptImg = {
   color: "#000",
@@ -11,10 +11,12 @@ const shadowOptImg = {
   y: 2,
 };
 
-export const ShadowImage = ({ source, resizeMode, borderRadius, width, height, mr }) => (
-  <BoxShadow setting={{ ...shadowOptImg, width, height, radius: borderRadius }}>
-    <Avatar mr={mr} width={width} height={height} source={source} resizeMode={resizeMode} borderRadius={borderRadius} />
-  </BoxShadow>
+export const ShadowImage = ({ onPress, source, resizeMode, borderRadius, width, height, mr }) => (
+  <TouchableOpacity onPress={onPress}>
+    <BoxShadow setting={{ ...shadowOptImg, width, height, radius: borderRadius }}>
+      <Avatar mr={mr} width={width} height={height} source={source} resizeMode={resizeMode} borderRadius={borderRadius} />
+    </BoxShadow>
+  </TouchableOpacity>
 );
 
 export const Container = styled.ScrollView`
