@@ -1,4 +1,6 @@
 import styled from 'styled-components/native';
+import posed from 'react-native-pose';
+import { Dimensions } from 'react-native';
 
 export const HouseContainer = styled.View`
   flex: 1;
@@ -52,8 +54,25 @@ export const ImagesView = styled.View`
   align-items: flex-end;
 `;
 
-export const ImageBottom = styled.Image`
-  opacity: ${props => props.active ? 1 : 0.6};
-  width: ${props => props.active ? '40%': '30%'};
-  height: ${props => props.active ? '210px' : '200px'};
+const { width } = Dimensions.get('window');
+
+// export const ImageBottom = styled.Image`
+//   width: ${p => p.active ? width * 0.4 : width * 0.3};
+//   height: ${p => p.active ? 210 : 200};
+//   opacity: ${p => p.active ? 1 : 0.6};
+// `;
+
+export const ib = posed.Image({
+  active: {
+    opacity: 1,
+  },
+  inactive: {
+    opacity: 0.6,
+  },
+});
+
+
+export const ImageBottom = styled(ib)`
+  width: ${p => p.pose === 'active' ? width * 0.4 : width * 0.3};
+  height: ${p => p.pose === 'active' ? 210 : 200};
 `;

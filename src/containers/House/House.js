@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import {
   HouseContainer, MainImg, BlackDrop,
   Title, WhiteDrop, Desc, ImagesView,
@@ -11,7 +11,21 @@ import home2 from '../../resources/home2.png';
 import home4 from '../../resources/home4.png';
 
 export default class House extends React.Component {
+  state = {
+    images: [
+      { key: 0, source: home1, active: false },
+      { key: 1, source: home2, active: true },
+      { key: 2, source: home4, active: false },
+    ]
+  }
+  pressImage = (key) => {
+    console.log('press key', key, this);
+    this.setState({
+      images: this.state.images.map(d => ({ ...d, active: d.key === key }))
+    });
+  }
   render() {
+    const { images } = this.state;
     return (
       <HouseContainer>
         <MainImg source={home5} resizeMode="cover" />
@@ -22,9 +36,15 @@ export default class House extends React.Component {
             <Desc>Determines how to resize the image when the frame doesn't match the raw image dimensions.</Desc>
           </TextView>
           <ImagesView>
-            <ImageBottom source={home1} active={false} />
-            <ImageBottom source={home2} active={true} />
-            <ImageBottom source={home4} active={false} />
+            {
+              images.map(
+                data => (
+                  <TouchableOpacity key={data.key} onPress={() => { this.pressImage(data.key); }}>
+                    <ImageBottom source={data.source} pose={data.active ? 'active' : 'inactive'} />
+                  </TouchableOpacity>
+                )
+              )
+            }
           </ImagesView>
         </WhiteDrop>
       </HouseContainer>
