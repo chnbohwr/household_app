@@ -5,10 +5,13 @@
  */
 
 import React, { Component } from 'react';
+import { UIManager } from 'react-native';
 import firebase from 'react-native-firebase';
 import { StackNavigator } from 'react-navigation';
 import Designer from './containers/Designer';
 import House from './containers/House';
+
+UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
 
 const APP = StackNavigator({
   Designer: { screen: Designer },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, LayoutAnimation } from 'react-native';
 import {
   HouseContainer, MainImg, BlackDrop,
   Title, WhiteDrop, Desc, ImagesView,
@@ -20,6 +20,7 @@ export default class House extends React.Component {
   }
   pressImage = (key) => {
     console.log('press key', key, this);
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     this.setState({
       images: this.state.images.map(d => ({ ...d, active: d.key === key }))
     });

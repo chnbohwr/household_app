@@ -71,7 +71,6 @@ export const ib = posed.Image({
   },
 });
 
-
 export const ImageBottom = styled(ib)`
   width: ${p => p.pose === 'active' ? width * 0.4 : width * 0.3};
   height: ${p => p.pose === 'active' ? 210 : 200};
